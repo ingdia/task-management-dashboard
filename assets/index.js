@@ -93,11 +93,18 @@ function togglestatus(id){
 togglestatus(2);
 
 // a function for filtering  task by status 
-function filterTask(status){
-   let   filteredTasks= task_list.filter(mytask=>mytask.status===status);
+function filterTask(filter){
+    let filteredTasks;
+    if (filter==="all"){
+        filteredTasks= task_list
+    }
+    else{
+      filteredTasks= task_list.filter(mytask=>mytask.status===filter);  
+    }
+     
     console.log(filteredTasks)
 }
-filterTask("pending");
+filterTask("all");
 
 
 
