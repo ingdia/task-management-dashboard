@@ -102,7 +102,7 @@ function filterTask(filter){
       filteredTasks= task_list.filter(mytask=>mytask.status===filter);  
     }
      
-    console.log(filteredTasks)
+    return filteredTasks
 }
 filterTask("all");
 
@@ -128,6 +128,21 @@ function sorting(){
     return newsorted ;
 }
 console.log(sorting())
+// function to store the data on browser storage
+function storetasks(){
+    localStorage.setItem("task_list", JSON.stringify(task_list));
+    return "task_list"
+}
+// function to load the stored data on browser
+function loadtasks(){
+let stored_list= localStorage.getItem("task_list")
+ if (stored_list){
+    task_list=  JSON.parse(stored_list)
+ }
+ return task_list
+}
+
+
 
 
 
