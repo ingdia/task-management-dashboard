@@ -3,10 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/297096f977.js" crossorigin="anonymous"></script>
+    <title>My Task Buddy</title>
 </head>
-<body>
-    
+<body class="py-8 px-8 bg-black text-yello-200">
+    <!-- the container of all -->
+    <div class="flex flex-col justify-between md:flex-row ">
+        <!-- the left side -->
+       <aside class="bg-gray-100 p-8 md:w-[234px] md:min-h-[580px] rounded-l-[40px]  " id="sidebar ">
+           <div class="" id="logo">My task budy</div>
+           <nav class="flex md:flex-col">
+            <a href="Home"><i class="fa-solid fa-house-user"></i>Home</a>
+            <a href=""><i class="fa-solid fa-list-ul"></i>All task</a>
+            <a href=""><i class="fa-solid fa-clock"></i>Pending</a>
+            <a href=""><i class="fa-solid fa-check-double"></i>Completed</a>
+           </nav>
+           <footer>Copyright</footer>
+       </aside>
+       <!-- the middle part -->
+       <main class="bg-gray-600 md:w-[900px] p-8 rounded-l-[40px] md:absolute md:mx-48 md:min-h-[580px]">
+          <header>
+            <div>
+                 <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div>29 september 2025</div>
+          </header>
+          <!-- form and upper part container -->
+          <div>
+            <!-- left upper of the main part -->
+             <div>
+                <p>Welcome Back!</p>
+                <p>Stay on top of your day</p>
+                <p>manage your tasks, and get things done efficiently.</p>
+             </div>
+             <!-- form to add a task -->
+              <form>
+                <iput type ="text" placeholder="your task name" required/>
+                <input type="date" required/>
+                <select>
+                    <option>low</option>
+                    <option>medium</option>
+                    <option>hign</option>
+                </select>
+                <button type="submit">Add Task</button>
+              </form>
+          </div>
+
+       </main> 
+       <!-- right side -->
+       <aside  class="bg-gray-100 md:w-[300px] p-8 rounded-l-[40px] rounded-r-[40px] md:absolute md:ml-[1000px] md:min-h-[580px]" >
+       <div class="h-[100px] w-[100px] rounded-full bg-gray-100"> <img src="assets/images/my.png" class="rounded-full h-[80px] w-[80px]"></div>
+       </aside>
+    </div>
     <script src="./assets/index.js"></script>
 </body>
 </html>
