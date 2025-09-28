@@ -106,6 +106,31 @@ function filterTask(filter){
 }
 filterTask("all");
 
+//started sorting , started by changing priority to numbers for us to use sort method 
+function changePriorityToNum(priority){
+    if(priority==="high"){
+       return 3;
+    }
+    else if(priority==="medium"){
+      return 2;
+    }
+    else {
+       return 1;
+    }
+}
+// sorting the task with priority from high to low 
+function sorting(){
+  let  newsorted= task_list.sort((task1,task2)=>{
+  let    mytask1=changePriorityToNum(task1.priority);
+  let  mytask2=changePriorityToNum(task2.priority);
+     return mytask2- mytask1;
+    });
+    return newsorted ;
+}
+console.log(sorting())
+
+
+
 
 
 
