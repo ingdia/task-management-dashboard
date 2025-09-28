@@ -38,23 +38,39 @@ console.log(task_list)
 
 
 // function to edit a task
-function EditTask(){
+function EditTask(id, mynewData){
+let mytask= task_list.find(mytask => mytask.id===id);
+if(mytask){
+    if(mynewData.taskname){
+      mytask.taskname= mynewData.taskname;
+    }
+    if(mynewData.priority){
+       mytask.priority= mynewData.priority;
+    }
+    if (mynewData.due_date) {
+            mytask.due_date = newData.due_date;
+        }
+}
+
  
 }
+EditTask(2, {taskname: "my shoping"});
 // function to delete the task
-function deleteTask(){
+function deleteTask(taskname){
     // for example we want to delete task one
     let userConfirm =confirm("are you sure you want to delete this task")
     
     if (userConfirm){
         console.log("the task is deleted!")
-        task_list= task_list.filter(task=>task.id!== id)
+        task_list= task_list.filter(task=>task.taskname!== taskname)
         console.log(task_list)
     }
     else {
         console.log("the task is not deleted ")
     }  
 }
+deleteTask("shoping");
+
 
 
 
