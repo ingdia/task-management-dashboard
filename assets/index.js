@@ -71,6 +71,21 @@ function deleteTask(taskname){
 }
 deleteTask("shoping");
 
+// function to mark as complete 
+
+function togglestatus(id){
+ let mytask= task_list.find(task=> task.id === id);
+ if(mytask){
+     if(mytask.status==="pending"){
+         mytask.status="completed"
+     }
+     else{
+         mytask.status="pending"
+     }
+ }
+}
+togglestatus(2);
+console.log(task_list)
 
 
 
