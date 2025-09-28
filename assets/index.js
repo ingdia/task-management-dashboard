@@ -10,6 +10,7 @@ class TaskManagement{
 }
 
 let task_list=[];
+loadtasks();
 // function to display initial task
 function displaytask(){
    let sample_tasks= [
@@ -24,12 +25,13 @@ function displaytask(){
     return task_list
 
 }
-let currentId= 0
+
 // function to add a task 
 function addTask({taskname,status="pending", priority="low", due_date=null}){
     if(!taskname) return; 
 let newtask= new TaskManagement(++currentId,taskname,status,priority,due_date )
 task_list.push(newtask);
+storetasks();
  return task_list;
 }
 displaytask();
@@ -54,7 +56,7 @@ if(mytask){
         }
 }
 
- 
+ storetasks();
 }
 EditTask(2, {taskname: "my shoping"});
 
@@ -73,6 +75,7 @@ function deleteTask(id){
     else {
         console.log("the task is not deleted ")
     }  
+    storetasks();
 }
 deleteTask(2);
 
@@ -89,6 +92,7 @@ function togglestatus(id){
          mytask.status="pending"
      }
  }
+ storetasks();
 }
 togglestatus(2);
 
@@ -141,9 +145,17 @@ let stored_list= localStorage.getItem("task_list")
  }
  return task_list
 }
+// an object window that will help to render everything when page loard using browser storage
+window.onload = function(){
+     loadtasks();
+     if (task_list.length===0){
+        displaytask();
+        storetasks();
+     }
+     renderTasks(task_list);
 
-
-
+     currentId = task_list.length ? Math.max(...task_list.map(task => task.id)) : 0;
+}
 
 
 
