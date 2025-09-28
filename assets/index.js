@@ -5,7 +5,7 @@ class TaskManagement{
         this.due_date=due_date;
         this.status=status;
         this.priority=priority
-    }  
+    } ;
     
 }
 
@@ -13,7 +13,7 @@ let task_list=[];
 // function to display initial task
 function displaytask(){
    let sample_tasks= [
-       {taskname: "working",due_date:"25-04-04"},
+       {taskname: "working",due_date:"25-04-04", status:"completed"},
        {taskname: "shoping",due_date:"25-05-04"},
        {taskname: "washing",due_date:"25-06-04"},
        {taskname: "cooking",due_date:"25-07-04"},
@@ -24,17 +24,19 @@ function displaytask(){
     return task_list
 
 }
-
+let currentId= 0
 // function to add a task 
 function addTask({taskname,status="pending", priority="low", due_date=null}){
-let newtask= new TaskManagement(Date.now(),taskname,status,priority,due_date )
+    if(!taskname) return; 
+let newtask= new TaskManagement(++currentId,taskname,status,priority,due_date )
 task_list.push(newtask);
  return task_list;
 }
 displaytask();
 // passing the object 
 addTask({taskname:"working",due_date:"2025-04-04"})
-console.log(task_list)
+// console.log(task_list)
+
 
 
 // function to edit a task
@@ -48,34 +50,38 @@ if(mytask){
        mytask.priority= mynewData.priority;
     }
     if (mynewData.due_date) {
-            mytask.due_date = newData.due_date;
+            mytask.due_date = mynewData.due_date;
         }
 }
 
  
 }
 EditTask(2, {taskname: "my shoping"});
+
 // function to delete the task
-function deleteTask(taskname){
+function deleteTask(id){
     // for example we want to delete task one
-    let userConfirm =confirm("are you sure you want to delete this task")
+    let task= task_list.find(task=>task.id===id);
+    if(!task) return;
+    let userConfirm =confirm(`are you sure you want to delete  ${task.taskname}?`)
     
     if (userConfirm){
-        console.log("the task is deleted!")
-        task_list= task_list.filter(task=>task.taskname!== taskname)
+        console.log(`the ${task.taskname}  is deleted!`)
+        task_list= task_list.filter(task=>task.id!== id)
         console.log(task_list)
     }
     else {
         console.log("the task is not deleted ")
     }  
 }
-deleteTask("shoping");
+deleteTask(2);
 
 // function to mark as complete 
 
 function togglestatus(id){
  let mytask= task_list.find(task=> task.id === id);
  if(mytask){
+// checking the status 
      if(mytask.status==="pending"){
          mytask.status="completed"
      }
@@ -85,7 +91,16 @@ function togglestatus(id){
  }
 }
 togglestatus(2);
-console.log(task_list)
+
+// a function for filtering  task by status 
+function filterTask(status){
+   let   filteredTasks= task_list.filter(mytask=>mytask.status===status);
+    console.log(filteredTasks)
+}
+filterTask("pending");
+
+
+
 
 
 
