@@ -28,11 +28,16 @@ Here’s how the interface looks:
 ##  How to Run Locally
 
 1. Clone the repository:
-   ```bash
-  git clone https://github.com/ingdia/task-management-dashboard.git
-```
+
+   ```bash 
+   git clone https://github.com/ingdia/task-management-dashboard.git 
+   ```
+
 
 2. Open the project folder:
-```cd task-management-dashboard
+
+```bash
+cd task-management-dashboard
+
 ```
 3. Open index.html in your browser — that’s it!
