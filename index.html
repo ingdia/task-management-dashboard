@@ -22,7 +22,7 @@
            <footer class=" text-white text-center py-8 mx-4 border-0 border-t-1 border-t-gray-100 fixed bottom-0 left-0 "><p> &copy; 2025 My Task Buddy</p><p>All rights reserved</p> </footer>
        </aside>
        <!-- the middle part -->
-       <main class=" bg-neutral-900 w-[400px] h[400px] md:w-[900px] md:p-8 rounded-l-[40px] md:absolute md:mx-48 md:min-h-[590px]">
+       <main class=" bg-neutral-900 w-[400px] h[400px] md:w-[860px] md:p-8 rounded-l-[40px] md:absolute md:mx-40 md:min-h-[590px]">
           <header class="flex flex-row justify-between mr-20 p-2 mb-4  ">
             <div class="bg-black  mb-4 px-2 py-1 md:py-2  md:w-[300px] md:px-4 rounded-2xl">
                 <span> <i class="fa-solid fa-magnifying-glass"></i></span> 
@@ -35,18 +35,18 @@
           <div class="flex flex-row md:space-x-[80px] bg-black md:p-8 rounded-2xl w-[750px] mb-[20px]"
             <!-- left upper of the main part -->
              <div>
-                <p>Welcome Back!</p>
+                <p class="text-white text-[28px]">Welcome <span class="text-yellow-500">Back!</span></p>
                 <p>Stay on top of your day</p>
                 <p>manage your tasks, and get things done efficiently.</p>
              </div>
              <!-- form to add a task -->
-              <form>
-                <input name="task" type="text" placeholder="task" id="inputTask" class="bg-black border-1 border-yellow-600 mb-4 px-2 py-1 md:py-2 w-auto md:w-[400px] md:px-4 rounded-2xl" required/>
-                <input type="date" class="bg-yellow-700 p-2 px-6 rounded-full" required/>
-                <select class="bg-black rounded-2xl border-1 border-yellow-600 mb-4 px-2 py-1 md:py-2 w-auto">
+              <form id="taskForm">
+                <input name="task"  id="inputTask" type="text" placeholder="task" id="inputTask" class="bg-black border-1 border-yellow-600 mb-4 px-2 py-1 md:py-2 w-auto md:w-[400px] md:px-4 rounded-2xl" required/>
+                <input type="date" id="inputDate" class="bg-yellow-700 p-2 px-6 rounded-full" required/>
+                <select class="bg-black rounded-2xl border-1 border-yellow-600 mb-4 px-2 py-1 md:py-2 w-auto" id="inputPriority">
                     <option>low</option>
                     <option>medium</option>
-                    <option>hign</option>
+                    <option>high</option>
                 </select>
                 <button type="submit" class="bg-yellow-700 p-2 px-6 rounded-full">Add Task</button>
               </form>
@@ -55,10 +55,13 @@
           <div>
            <p class="text-yellow-500 font-bold text-[32px]">My Tasks</p>
           </div>
+           <div id="taskContainer" class="mt-4">
+           <!-- Tasks will appear here dynamically -->
+          </div>
 
        </main> 
        <!-- right side -->
-       <aside  class=" bg-neutral-900 py-8 md:w-[300px] p-2 rounded-l-[40px] rounded-r-[40px] md:absolute md:ml-[1000px] md:min-h-[590px]" >
+       <aside  class=" bg-neutral-900 mx-2 py-8 md:w-[300px] p-2 rounded-l-[40px] rounded-r-[40px] md:absolute md:ml-[990px] md:min-h-[590px]" >
        <div class="flex justify-center"><div class="h-[60px] w-[60px] rounded-full bg-black mb-[10px] flex justify-center border-1 border-yellow-600 "> <img src="assets/images/my.png" class="rounded-full h-[50px] w-[50px]"></div></div>
         <div class=" pb-4 flex justify-center border-0 border-b-1 border-b-gray-100"><p>Diane Ingabire </p></div>
        <!-- this the section for the card shows the number -->
