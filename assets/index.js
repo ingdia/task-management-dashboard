@@ -176,7 +176,7 @@ function renderTasks(tasks) {
   tasks.forEach((task) => {
     const taskDiv = document.createElement("div");
     taskDiv.className =
-      "flex justify-between px-4 mb-2 bg-zinc-800 rounded-xl items-center";
+      "flex justify-between md:px-4 mb-2 bg-stone-700 h-[50px] rounded-xl items-center";
     taskDiv.setAttribute("data-id", task.id);
 
     // Priority color
@@ -193,7 +193,7 @@ function renderTasks(tasks) {
             } class="mr-2"/>
             <p class="flex-1">${task.taskname} [${
       task.status
-    }] - Priority: <span class="${priorityClass}">${task.priority}</span></p>
+    }] - Priority: <span class="${priorityClass}">${task.priority}</span> ${task.due_date}<span></span></p>
             <button class="edit-btn px-2"><i class="fa-solid fa-edit"></i></button>
             <button class="delete-btn px-2"><i class="fa-solid fa-trash"></i></button>
         `;
