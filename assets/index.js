@@ -155,6 +155,16 @@ function loadtasks() {
   }
   return task_list;
 }
+
+// counting cards 
+function countTask(){
+    let allTask= task_list.length;
+    let pendingTask = task_list.filter(task=>task.status==="pending").length
+    let completedTask = task_list.filter(task=>task.status==="completed").length
+
+    return({allTask,pendingTask,completedTask})
+}
+
 // an object window that will help to render everything when page loard using browser storage
 window.onload = function () {
   loadtasks();
@@ -176,7 +186,7 @@ function renderTasks(tasks) {
   tasks.forEach((task) => {
     const taskDiv = document.createElement("div");
     taskDiv.className =
-      "flex justify-between md:px-4 mb-2 bg-stone-700 h-[50px] rounded-xl items-center";
+      "flex justify-between md:px-4 w-[760px] mb-2 bg-stone-700 h-[50px] rounded-xl items-center";
     taskDiv.setAttribute("data-id", task.id);
 
     // Priority color
@@ -199,7 +209,9 @@ function renderTasks(tasks) {
         `;
 
     container.appendChild(taskDiv);
+    
   });
+   updateCountCard();
 }
 document
   .getElementById("taskContainer")
@@ -240,6 +252,7 @@ document
         }
       });
     }
+  
   });
 
 document.getElementById("taskForm").addEventListener("submit", function (e) {
@@ -252,6 +265,7 @@ document.getElementById("taskForm").addEventListener("submit", function (e) {
 
   addTask({ taskname, due_date, priority });
   renderTasks(task_list);
+  updateCountCard();
   e.target.reset();
 });
 
@@ -267,4 +281,12 @@ document.getElementById("filterCompleted").addEventListener("click",function(e){
      e.preventDefault();
      renderTasks(filterTask("completed"))
 })
+
+
+function updateCountCard(){
+    const {allTask,pendingTask,completedTask}= countTask();
+    document.getElementById("countAll").innerHTML=`All tasks: ${allTask}`;
+    document.getElementById("countPending").innerHTML=`Pending task: ${pendingTask}`;
+     document.getElementById("countCompleted").innerHTML=`Completed task: ${completedTask}`;
+}
 

@@ -7,17 +7,17 @@
     <script src="https://kit.fontawesome.com/297096f977.js" crossorigin="anonymous"></script>
     <title>My Task Buddy</title>
 </head>
-<body class=" w-[300px] md:py-8 md:px-8 bg-black text-yellow-100">
+<body class=" w-[300px] md:py-8 md:px-8 bg-black text-yellow-100 font-serif">
     <!-- the container of all -->
     <div class="flex flex-col justify-between   md:flex-row w-[300px]">
         <!-- the left side -->
        <aside class="bg-black   md:w-[234px] md:min-h-[590px] rounded-l-[40px]  " id="sidebar ">
-           <div class="text-yellow-500 mb-[30px] font-bold text-[24px]" id="logo">My task budy</div>
+           <div class="text-yellow-500 mb-[30px] font-bold text-[22px]" id="logo">My task budy</div>
            <nav class="flex md:flex-col space-y-[10px]">
-            <a href="#" id="" class="hover:bg-neutral-900 hover:rounded-2xl px-4 py-1"><i class="fa-solid fa-house-user mb-4 "></i>Home</a>
-            <a href="#" id="filterAll" class="hover:bg-neutral-900 hover:rounded-2xl px-4 py-1"><i class="fa-solid fa-list-ul"></i>All task</a>
-            <a href="#" id="filterPending" class="hover:bg-neutral-900 hover:rounded-2xl px-4 py-1"><i class="fa-solid fa-clock"></i>Pending</a>
-            <a href="#" id="filterCompleted" class="hover:bg-neutral-900 hover:rounded-2xl px-4 py-1"><i class="fa-solid fa-check-double"></i>Completed</a>
+            <a href="#" id="" class="hover:bg-neutral-900 font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-house-user mb-4 "></i>Home</a>
+            <a href="#" id="filterAll" class="hover:bg-neutral-900 font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-list-ul"></i>All task</a>
+            <a href="#" id="filterPending" class="hover:bg-neutral-900  font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-clock"></i>Pending</a>
+            <a href="#" id="filterCompleted" class="hover:bg-neutral-900  font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-check-double"></i>Completed</a>
            </nav>
            <footer class=" text-white text-center py-8 mx-4 border-0 border-t-1 border-t-gray-100 fixed bottom-0 left-0 "><p> &copy; 2025 My Task Buddy</p><p>All rights reserved</p> </footer>
        </aside>
@@ -35,7 +35,7 @@
           <div class="flex flex-row md:space-x-[80px] bg-black md:p-8 rounded-2xl w-[750px] mb-[20px]"
             <!-- left upper of the main part -->
              <div>
-                <p class="text-white text-[28px]">Welcome <span class="text-yellow-500">Back!</span></p>
+                <p class="text-white text-[24px]">Welcome <span class="text-yellow-500">Back!</span></p>
                 <p>Stay on top of your day</p>
                 <p>manage your tasks, and get things done efficiently.</p>
              </div>
@@ -66,18 +66,18 @@
         <div class=" pb-4 flex justify-center border-0 border-b-1 border-b-gray-100"><p>Diane Ingabire </p></div>
        <!-- this the section for the card shows the number -->
           <div class="grid min-w-[280] gap-4  grid-cols-2 pt-8 ">
-             <div class="bg-yellow-900 rounded-2xl min-w-[90px] p-2 px-4">
+             <div class="bg-yellow-900 rounded-2xl min-w-[90px] py-2 px-4" id="countAll">
               <p>All Task</p>
-             <p>3</p>
+             <p>0</p>
               
              </div>
-             <div class="bg-yellow-900  min-w-[90px]  rounded-2xl p-2 px-4">
+             <div class="bg-yellow-900  min-w-[90px]  rounded-2xl py-1 px-4" id="countPending">
                <p>Pending Task</p>
-               <p>2</p>
+               <p>0</p>
              </div>
-             <div class="bg-yellow-900 min-w-[90px]  rounded-2xl p-2 px-4" >
+             <div class="bg-yellow-900 min-w-[90px]  rounded-2xl py-1 px-4" id="countCompleted" >
               <p>Completed </p>
-              <p>1</p>
+              <p>0</p>
              </div>
           </div>
          <div class="w-80 bg-black  w-[280px] shadow-lg rounded-2xl p-4 mt-4">
