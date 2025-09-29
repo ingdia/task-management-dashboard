@@ -254,3 +254,17 @@ document.getElementById("taskForm").addEventListener("submit", function (e) {
   renderTasks(task_list);
   e.target.reset();
 });
+
+document.getElementById("filterAll").addEventListener("click", function(event){
+    event.preventDefault();
+    renderTasks(filterTask("all"))
+})
+document.getElementById("filterPending").addEventListener("click",function(e){
+     e.preventDefault();
+     renderTasks(filterTask("pending"))
+})
+document.getElementById("filterCompleted").addEventListener("click",function(e){
+     e.preventDefault();
+     renderTasks(filterTask("completed"))
+})
+
