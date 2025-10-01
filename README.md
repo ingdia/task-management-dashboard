@@ -26,19 +26,17 @@ Here’s how the interface looks:
 - **Font Awesome** (for icons)
 
 ## Folder structure 
+
 ```bash
-task-management-dashboard
-|   index.html
-|   README.md
-|   structure.txt
-|   
-\---assets
-    |   index.js
-    |   
-    \---images
-            image.png
-            my.png
-            
+task-management-dashboard/
+├── index.html
+├── README.md
+├── assets/
+│   ├── index.js
+│   └── images/
+│       ├── image.png
+│       └── my.png
+
 ```
 
 ##  How to Run Locally
