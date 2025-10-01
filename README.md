@@ -25,12 +25,29 @@ Here’s how the interface looks:
 - **JavaScript (Vanilla)**  
 - **Font Awesome** (for icons)
 
+## Folder structure 
+```bash
+task-management-dashboard
+|   index.html
+|   README.md
+|   structure.txt
+|   
+\---assets
+    |   index.js
+    |   
+    \---images
+            image.png
+            my.png
+            
+```
+
 ##  How to Run Locally
 
 1. Clone the repository:
 
    ```bash 
    git clone https://github.com/ingdia/task-management-dashboard.git 
+   
    ```
 
 
@@ -40,4 +57,6 @@ Here’s how the interface looks:
 cd task-management-dashboard
 
 ```
-3. Open index.html in your browser — that’s it!
+3. Open index.html in your browser or use Live server — that’s it!
+
+

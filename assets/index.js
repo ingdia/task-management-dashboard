@@ -181,7 +181,7 @@ window.onload = function () {
 
 function renderTasks(tasks) {
   const container = document.getElementById("taskContainer");
-  container.innerHTML = ""; // Clear previous tasks
+  container.innerHTML = ""; // delete the  previous tasks
 
   tasks.forEach((task) => {
     const taskDiv = document.createElement("div");
@@ -208,14 +208,17 @@ function renderTasks(tasks) {
             <button class="delete-btn px-2"><i class="fa-solid fa-trash"></i></button>
         `;
 
+   if(task.status==="completed"){
+    let paragraph = taskDiv.querySelector("p");
+    paragraph.classList.add("line-through", "text-gray-400");
+    taskDiv.classList.add("bg-yellow-900");
+   }
     container.appendChild(taskDiv);
     
   });
    updateCountCard();
 }
-document
-  .getElementById("taskContainer")
-  .addEventListener("click", function (e) {
+document.getElementById("taskContainer").addEventListener("click", function (e) {
     const taskDiv = e.target.closest("div[data-id]");
     if (!taskDiv) return;
 
@@ -287,6 +290,7 @@ function updateCountCard(){
     const {allTask,pendingTask,completedTask}= countTask();
     document.getElementById("countAll").innerHTML=`All tasks: ${allTask}`;
     document.getElementById("countPending").innerHTML=`Pending task: ${pendingTask}`;
-     document.getElementById("countCompleted").innerHTML=`Completed task: ${completedTask}`;
+     document.getElementById("countCompleted").innerHTML=`Completed task
+     : ${completedTask}`;
 }
 

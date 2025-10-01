@@ -11,15 +11,15 @@
     <!-- the container of all -->
     <div class="flex flex-col justify-between   md:flex-row w-[300px]">
         <!-- the left side -->
-       <aside class="bg-black   md:w-[234px] md:min-h-[590px] rounded-l-[40px]  " id="sidebar ">
-           <div class="text-yellow-500 mb-[30px] font-bold text-[22px]" id="logo">My task budy</div>
+       <aside class="bg-black   md:w-[234px] md:min-h-[590px] rounded-l-[40px] fixed " id="sidebar ">
+           <div class="text-yellow-500 mb-[30px] mr-2 font-bold text-[22px]" id="logo">My task budy</div>
            <nav class="flex md:flex-col space-y-[10px]">
             <a href="#" id="" class="hover:bg-neutral-900 font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-house-user mb-4 "></i>Home</a>
             <a href="#" id="filterAll" class="hover:bg-neutral-900 font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-list-ul"></i>All task</a>
             <a href="#" id="filterPending" class="hover:bg-neutral-900  font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-clock"></i>Pending</a>
             <a href="#" id="filterCompleted" class="hover:bg-neutral-900  font-bold hover:rounded-2xl px-4 py-2"><i class="fa-solid fa-check-double"></i>Completed</a>
            </nav>
-           <footer class=" text-white text-center py-8 mx-4 border-0 border-t-1 border-t-gray-100 fixed bottom-0 left-0 "><p> &copy; 2025 My Task Buddy</p><p>All rights reserved</p> </footer>
+           <footer class=" text-white text-center py-8 mx-2 border-0 border-t-1 border-t-gray-100 fixed bottom-0 left-0 "><p> &copy; 2025 My Task Buddy</p><p>All rights reserved</p> </footer>
        </aside>
        <!-- the middle part -->
        <main class=" bg-neutral-900 w-[400px] h[400px] md:w-[860px] md:p-8 rounded-l-[40px] md:absolute md:mx-40 md:min-h-[590px]">
@@ -29,7 +29,7 @@
               <input type="text" placeholder="search" />
                 
             </div>
-            <div>29 september 2025</div>
+            <div class="text-yellow-500">30 september 2025</div>
           </header>
           <!-- form and upper part container -->
           <div class="flex flex-row md:space-x-[80px] bg-black md:p-8 rounded-2xl w-[750px] mb-[20px]"
@@ -41,7 +41,7 @@
              </div>
              <!-- form to add a task -->
               <form id="taskForm">
-                <input name="task"  id="inputTask" type="text" placeholder="task" id="inputTask" class="bg-black border-1 border-yellow-600 mb-4 px-2 py-1 md:py-2 w-auto md:w-[400px] md:px-4 rounded-2xl" required/>
+                <input name="task"  type="text" placeholder="task" id="inputTask" class="bg-black border-1 border-yellow-600 mb-4 px-2 py-1 md:py-2 w-auto md:w-[400px] md:px-4 rounded-2xl" required/>
                 <input type="date" id="inputDate" class="bg-yellow-700 p-2 px-6 rounded-full" required/>
                 <select class="bg-black rounded-2xl border-1 border-yellow-600 mb-4 px-2 py-1 md:py-2 w-auto" id="inputPriority">
                     <option>low</option>
@@ -61,7 +61,7 @@
 
        </main> 
        <!-- right side -->
-       <aside  class=" bg-neutral-900 mx-2 py-8 md:w-[300px] p-2 rounded-l-[40px] rounded-r-[40px] md:absolute md:ml-[990px] md:min-h-[590px]" >
+       <aside  class=" bg-neutral-900 mx-2 py-8 md:w-[300px] p-2 rounded-l-[40px] rounded-r-[40px] md:fixed md:ml-[990px] md:min-h-[590px]" >
        <div class="flex justify-center"><div class="h-[60px] w-[60px] rounded-full bg-black mb-[10px] flex justify-center border-1 border-yellow-600 "> <img src="assets/images/my.png" class="rounded-full h-[50px] w-[50px]"></div></div>
         <div class=" pb-4 flex justify-center border-0 border-b-1 border-b-gray-100"><p>Diane Ingabire </p></div>
        <!-- this the section for the card shows the number -->
